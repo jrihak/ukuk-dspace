@@ -141,8 +141,9 @@
             <div>
                 <h4>
                     <xsl:call-template name="itemSummaryView-DIM-general-work-type"/>
-                    <xsl:call-template name="itemSummaryView-DIM-theses-defense-status"/>
-                </h4>
+		    <xsl:call-template name="itemSummaryView-DIM-theses-defense-status"/>
+	    	</h4>
+		<xsl:call-template name="itemSummaryView-DIM-theses-postponed"/>
             </div>
         </div>
     	<div class="row">
@@ -215,7 +216,6 @@
 
 	<xsl:template name="itemSummaryView-DIM-theses" >
 		<div class="col-xs-12 col-sm-7">
-		    <xsl:call-template name="itemSummaryView-DIM-theses-postponed"/>
 		    <xsl:call-template name="itemSummaryView-DIM-general-authors"/>
 		    <xsl:call-template name="itemSummaryView-DIM-theses-advisors"/>
 		    <xsl:call-template name="itemSummaryView-DIM-theses-referees"/>
