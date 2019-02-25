@@ -17,6 +17,18 @@
     xmlns:confman="org.dspace.core.ConfigurationManager"
     exclude-result-prefixes="xalan encoder i18n dri mets dim xlink xsl util jstring rights confman">
 
+	<!---<JR> - 25. 2. 2019 -->
+	<xsl:template name="itemSummaryView-DIM-theses-postponed">
+		<xsl:if test="dim:field[@element='embargo' and @qualifier='lift']">
+			<div class="alert alert-warning" role="alert">
+					<i18n:text>xmlui.dri2xhtml.METS-1.0.item-postpone-item-view</i18n:text><xsl:text> </xsl:text> <strong><xsl:value-of select="dim:field[@element='embargo' and @qualifier='lift']"/></strong><xsl:text> </xsl:text><i18n:text>xmlui.dri2xhtml.METS-1.0.item-postpone-reason-item-view</i18n:text><xsl:text>:</xsl:text>
+					<br/>
+					<br/>
+					<xsl:value-of select="dim:field[@element='embargo' and @qualifier='reason']"/>
+			</div>
+		</xsl:if>
+	</xsl:template>
+
     <!-- <JR> - 22. 2. 2017 -->
     <xsl:template name="itemSummaryView-DIM-theses-defense-status">
         <xsl:if test="dim:field[@element='grade' and @qualifier='cs']">

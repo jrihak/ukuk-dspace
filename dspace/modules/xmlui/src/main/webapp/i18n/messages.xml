@@ -2260,7 +2260,9 @@
         whatever profile you use.
     </message>
 
-    <message key="xmlui.dri2xhtml.METS-1.0.item-info-unavailable">Information unavailable</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-postpone-item-view">Item's publication has been postponed to</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-postpone-reason-item-view">because of the following reason</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-info-unavailable">Information unavailable</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-preview">Preview</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-title">Title</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-author">Author</message>
