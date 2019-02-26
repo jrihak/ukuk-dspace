@@ -20,11 +20,11 @@
 	<!---<JR> - 25. 2. 2019 -->
 	<xsl:template name="itemSummaryView-DIM-theses-postponed">
 		<xsl:if test="dim:field[@element='embargo' and @qualifier='lift']">
-			<div class="alert alert-warning" role="alert">
-					<i18n:text>xmlui.dri2xhtml.METS-1.0.item-postpone-item-view</i18n:text><xsl:text> </xsl:text> <strong><xsl:value-of select="dim:field[@element='embargo' and @qualifier='lift']"/></strong><xsl:text> </xsl:text><i18n:text>xmlui.dri2xhtml.METS-1.0.item-postpone-reason-item-view</i18n:text><xsl:text>:</xsl:text>
-					<br/>
-					<br/>
-					<xsl:value-of select="dim:field[@element='embargo' and @qualifier='reason']"/>
+			<div class="alert alert-danger item-view-alert-danger-uk" role="alert">
+				<i18n:text>xmlui.dri2xhtml.METS-1.0.item-postpone-item-view</i18n:text><xsl:text> </xsl:text> <strong><xsl:value-of select="dim:field[@element='embargo' and @qualifier='lift']"/></strong><xsl:text> </xsl:text><i18n:text>xmlui.dri2xhtml.METS-1.0.item-postpone-reason-item-view</i18n:text><xsl:text>:</xsl:text>
+				<br/>
+				<br/>
+				<xsl:value-of select="dim:field[@element='embargo' and @qualifier='reason']"/>
 			</div>
 		</xsl:if>
 	</xsl:template>

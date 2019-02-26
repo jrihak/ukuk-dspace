@@ -198,8 +198,18 @@ h4 small, h4 .small, h5 small, h5 .small, h6 small, h6 .small,
     border-bottom: none;
 }
 
+.item-view-alert-danger-uk {
+	background-color: #fff;
+	border-color: #cc2c32;
+	color: #000;
+}
+
+.item-view-alert-danger-uk > strong {
+	color: #cc2c32;
+}
+
 .item-view-heading-secondary {
-    font-size: 18px;
+	  font-size: 18px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
 }
