@@ -300,7 +300,6 @@
                             <!-- Tohle vypíše hovno před každý text v DISCOVER facetě i v browse facetě -->
                             <!-- TODO: Jak omezit vypsání hodnoty jen pro facety? Dočasně vhodné řešení nalezeno, viz TODO výše -->
                             <!--<xsl:text>HOVNO</xsl:text><xsl:apply-templates select="dri:xref/node()"/><xsl:text>podmínka prošla </xsl:text><xsl:value-of select="ancestor::dri:list[1]/@n" />-->
-                            <!-- TODO: VYMYSLET, JAK BUDE GENEROVÁN I18N:TEXT Z HODNOTY FACETY !!!-->
                             <!--<i18n:text>xmlui.facet.[INDEX_NAME].translation.[DOPLŇ HODNOTU FACETY]</i18n:text>-->
                             <!--<i18n:text>xmlui.facet.<xsl:value-of select="ancestor::dri:list[1]/@n"/>.translation.<xsl:apply-templates select="dri:xref/node()"/></i18n:text>-->  
                             <i18n:text>xmlui.facet.<xsl:value-of select="ancestor::dri:list[1]/@n"/>.translation.<xsl:value-of select="substring-after($var-target,'filter=')"/></i18n:text><xsl:text> ( </xsl:text><xsl:value-of select="$hit-count"/><xsl:text> )</xsl:text>
@@ -316,10 +315,10 @@
                 <xsl:otherwise>
                     <xsl:choose>
                         <xsl:when test="dri:xref/node()">
-                            <xsl:text>HOVNO - </xsl:text><xsl:apply-templates select="dri:xref/node()"/>
+                            <xsl:apply-templates select="dri:xref/node()"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:text>HOVNO 2 - </xsl:text><xsl:value-of select="dri:xref"/>
+                            <xsl:value-of select="dri:xref"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:otherwise>
