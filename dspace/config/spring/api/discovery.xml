@@ -152,6 +152,9 @@
         <!--Which sidebar facets are to be displayed-->
         <property name="sidebarFacets">
             <list>
+                <!-- <JR> - 16. 7. 2019 - translated facets -->
+                <ref bean="searchFilterWorkTypeTranslation" />
+				<!-- END of translated facets -->
                 <ref bean="searchFilterThesesFaculty" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
@@ -163,10 +166,13 @@
         <!--The search filters which can be used on the discovery search page-->
         <property name="searchFilters">
             <list>
+                <!-- <JR> - 16. 7. 2019 - translated facets -->
+                <ref bean="searchFilterWorkTypeTranslation" />
+				<!-- END of translated facets -->
                 <ref bean="searchFilterThesesFaculty" />
                 <ref bean="searchFilterTitle" />
-		<ref bean="searchFilterAuthor" />
-		<ref bean="searchFilterThesesDID" />
+		        <ref bean="searchFilterAuthor" />
+		        <ref bean="searchFilterThesesDID" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
                 <ref bean="searchFilterThesesLanguage" />
@@ -262,6 +268,9 @@
         <!--Which sidebar facets are to be displayed (same as defaultConfiguration above)-->
         <property name="sidebarFacets">
             <list>
+                <!-- <JR> - 16. 7. 2019 - translated facets -->
+                <ref bean="searchFilterWorkTypeTranslation" />
+				<!-- END of translated facets -->
                 <ref bean="searchFilterThesesFaculty" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
@@ -278,8 +287,11 @@
                 <ref bean="searchFilterThesesAdvisor" />
                 <ref bean="searchFilterThesesFaculty" />
                 <ref bean="searchFilterWorkType" />
-		<ref bean="searchFilterThesesDID" />
-		<ref bean="searchFilterThesesFacultyDepartment" />
+                <!-- <JR> - 16. 7. 2019 - translated facets -->
+                <ref bean="searchFilterWorkTypeTranslation" />
+				<!-- END of translated facets -->
+		        <ref bean="searchFilterThesesDID" />
+		        <ref bean="searchFilterThesesFacultyDepartment" />
                 <ref bean="searchFilterDefenceYear" />
                 <ref bean="searchFilterThesesGrade" />
                 <ref bean="searchFilterIssued" />
@@ -348,6 +360,9 @@
         	<property name="sidebarFacets">
             		<list>
 				        <ref bean="searchFilterWorkType" />
+                        <!-- <JR> - 16. 7. 2019 - translated facets -->
+                        <ref bean="searchFilterWorkTypeTranslation" />
+				        <!-- END of translated facets -->
 				        <ref bean="searchFilterThesesFacultyDepartment" />
                         <ref bean="searchFilterThesesLanguage" />
 				        <ref bean="searchFilterDefenceYear" />
@@ -366,8 +381,11 @@
                         	<ref bean="searchFilterThesesAdvisor" />
                         	<ref bean="searchFilterThesesFaculty" />
                         	<ref bean="searchFilterWorkType" />
-				<ref bean="searchFilterThesesDID" />
-				<ref bean="searchFilterThesesFacultyDepartment" />
+                            <!-- <JR> - 16. 7. 2019 - translated facets -->
+                            <ref bean="searchFilterWorkTypeTranslation" />
+				            <!-- END of translated facets -->
+				            <ref bean="searchFilterThesesDID" />
+				            <ref bean="searchFilterThesesFacultyDepartment" />
                         	<ref bean="searchFilterDefenceYear" />
                         	<ref bean="searchFilterThesesGrade" />
                         	<ref bean="searchFilterIssued" />
@@ -473,6 +491,9 @@
         	<property name="sidebarFacets">
             		<list>
 				        <ref bean="searchFilterWorkType" />
+                        <!-- <JR> - 16. 7. 2019 - translated facets -->
+                        <ref bean="searchFilterWorkTypeTranslation" />
+                        <!-- END of translated facets -->
 				        <ref bean="searchFilterThesesFacultyDepartment" />
                         <ref bean="searchFilterThesesLanguage" />
 				        <ref bean="searchFilterDefenceYear" />
@@ -490,8 +511,11 @@
                         	<ref bean="searchFilterAuthor" />
                         	<ref bean="searchFilterThesesAdvisor" />
                         	<ref bean="searchFilterThesesFaculty" />
-				<ref bean="searchFilterWorkType" />
-				<ref bean="searchFilterThesesDID" />
+				            <ref bean="searchFilterWorkType" />
+                            <!-- <JR> - 16. 7. 2019 - translated facets -->
+                            <ref bean="searchFilterWorkTypeTranslation" />
+				            <!-- END of translated facets -->
+                            <ref bean="searchFilterThesesDID" />
            	            	<ref bean="searchFilterThesesFacultyDepartment" />
                         	<ref bean="searchFilterDefenceYear" />
                         	<ref bean="searchFilterThesesGrade" />
@@ -756,6 +780,19 @@
 	</bean>
 
 	<!-- UK - specific filter configuration beans -->
+
+    <!-- <JR>  16. 7. 2019 - translated facets -->
+    <bean id="searchFilterWorkTypeTranslation" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="ds_thesesTypeCode"/>
+		<property name="metadataFields">
+			<list>
+				<value>uk.doctype.code</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="50"/>
+		<property name="sortOrder" value="COUNT"/>
+	</bean>
+
 	<bean id="searchFilterThesesType" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
 		<property name="indexFieldName" value="ds_thesesType"/>
 		<property name="metadataFields">

@@ -23,6 +23,10 @@
 		   particular java class.
 		-->
 
+	<!-- <JR> - 18. 7. 2019 -->
+	<!-- FACET TRANSLATIONS-->
+	<message key="xmlui.facet.ds_uk_faculty.translation.164">Faculty of Arts</message>
+
 	<!-- General keys -->
 	<message key="xmlui.general.dspace_home">CU Digital Repository</message>
 	<message key="xmlui.general.search">Search</message>
