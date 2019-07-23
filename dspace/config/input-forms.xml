@@ -606,8 +606,8 @@ it, please enter the types and the actual numbers or codes.</hint>
 		<page number="1">
 			<field>
 				<dc-schema>dc</dc-schema>
-				<dc-element>creator</dc-element>
-				<dc-qualifier></dc-qualifier>
+				<dc-element>contributor</dc-element>
+				<dc-qualifier>author</dc-qualifier>
 				<repeatable>false</repeatable>
 				<label>Autor práce (povinný údaj)</label>
 				<input-type>name</input-type>
