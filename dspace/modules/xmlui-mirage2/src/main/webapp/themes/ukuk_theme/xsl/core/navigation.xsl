@@ -252,86 +252,27 @@
 
 
     <xsl:template match="dri:options//dri:item">
-        <!-- PŘÍDÁNO <JR> -->
-        <xsl:variable name="var-target" select="." />
-        <xsl:variable name="hit-count" select="substring-after(substring-before(., ')'), '(')" />
-        <!-- -->
         <div>
             <xsl:call-template name="standardAttributes">
                 <xsl:with-param name="class">list-group-item ds-option</xsl:with-param>
             </xsl:call-template>
-
-            <xsl:variable name="div-id" select="./@id" />
-            <xsl:choose>
-                <xsl:when test="contains($div-id,'aspect.discovery.SidebarFacetsTransformer.item.')">
-                    <xsl:choose>
-                        <xsl:when test="ancestor::dri:list[1][@n = 'ds_uk_faculty']">
-                            <i18n:text>xmlui.facet.<xsl:value-of select="ancestor::dri:list[1]/@n"/>.translation.<xsl:value-of select="translate(substring-before($var-target,'('),' ', '')"/></i18n:text><xsl:text> ( </xsl:text><xsl:value-of select="$hit-count"/><xsl:text> )</xsl:text>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:apply-templates />
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates />
-                </xsl:otherwise>
-            </xsl:choose>
-            <!--<xsl:apply-templates />-->
+            <xsl:apply-templates />
         </div>
     </xsl:template>
 
     <xsl:template match="dri:options//dri:item[dri:xref]">
-        <!-- PŘÍDÁNO <JR> -->
-        <xsl:variable name="var-target" select="dri:xref/@target" />
-        <xsl:variable name="hit-count" select="substring-after(substring-before(., ')'), '(')" />
-        <!-- -->
         <a href="{dri:xref/@target}">
             <xsl:call-template name="standardAttributes">
                 <xsl:with-param name="class">list-group-item ds-option</xsl:with-param>
             </xsl:call-template>
-            <!-- Omezení automatického překladu jen na facety určitého typu -->
             <xsl:choose>
-                <!-- PODMINKA FUNGUJE !!! -->
-                <!-- TODO: Najít nějakou obecnější podmínku pro určení, která faceta se bude automaticky překládat !!!-->
-                <xsl:when test="ancestor::dri:list[1][@n = 'ds_uk_faculty']">
-                    <xsl:choose>
-                        <xsl:when test="dri:xref/node()">
-                            <!-- Tohle vypíše hovno před každý text v DISCOVER facetě i v browse facetě -->
-                            <!-- TODO: Jak omezit vypsání hodnoty jen pro facety? Dočasně vhodné řešení nalezeno, viz TODO výše -->
-                            <!--<xsl:text>HOVNO</xsl:text><xsl:apply-templates select="dri:xref/node()"/><xsl:text>podmínka prošla </xsl:text><xsl:value-of select="ancestor::dri:list[1]/@n" />-->
-                            <!--<i18n:text>xmlui.facet.[INDEX_NAME].translation.[DOPLŇ HODNOTU FACETY]</i18n:text>-->
-                            <!--<i18n:text>xmlui.facet.<xsl:value-of select="ancestor::dri:list[1]/@n"/>.translation.<xsl:apply-templates select="dri:xref/node()"/></i18n:text>-->  
-                            <i18n:text>xmlui.facet.<xsl:value-of select="ancestor::dri:list[1]/@n"/>.translation.<xsl:value-of select="substring-after($var-target,'filter=')"/></i18n:text><xsl:text> ( </xsl:text><xsl:value-of select="$hit-count"/><xsl:text> )</xsl:text>
-                            <!--<xsl:apply-templates select="dri:xref/node()"/>-->
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <!--<xsl:text>HOVNO</xsl:text><xsl:value-of select="dri:xref"/><xsl:text>podmínka prošla </xsl:text><xsl:value-of select="ancestor::dri:list[1]/@n" />-->
-                            <!--<i18n:text>xmlui.facet.<xsl:value-of select="ancestor::dri:list[1]/@n"/>.translation.<xsl:value-of select="dri:xref"/></i18n:text>-->
-                            <i18n:text>xmlui.facet.<xsl:value-of select="ancestor::dri:list[1]/@n"/>.translation.<xsl:value-of select="substring-after($var-target,'filter=')"/></i18n:text><xsl:text> ( </xsl:text><xsl:value-of select="$hit-count"/><xsl:text> )</xsl:text>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:choose>
-                        <xsl:when test="dri:xref/node()">
-                            <xsl:apply-templates select="dri:xref/node()"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="dri:xref"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:otherwise>
-            </xsl:choose>
-            <!--<xsl:choose>
                 <xsl:when test="dri:xref/node()">
                     <xsl:apply-templates select="dri:xref/node()"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="dri:xref"/>
                 </xsl:otherwise>
-            </xsl:choose>-->
-            
+            </xsl:choose> 
         </a>
     </xsl:template>
 
