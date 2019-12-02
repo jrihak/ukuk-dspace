@@ -32,6 +32,9 @@
           class="org.dspace.browse.SolrBrowseCreateDAO">
     </bean>
 
+    <!-- <JR> -  28.11.2019 - Additional indexing plugin to implement indexing of faculty names  instead of faculty ID number -->
+    <bean id="SolrServiceFacultyMappingPlugin" class="org.dspace.discovery.SolrServiceFacultyMappingPlugin"/>
+
     <!--Bean that is used for mapping communities/collections to certain discovery configurations.-->
     <bean id="org.dspace.discovery.configuration.DiscoveryConfigurationService" class="org.dspace.discovery.configuration.DiscoveryConfigurationService">
         <property name="map">
