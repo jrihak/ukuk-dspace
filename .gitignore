@@ -33,6 +33,7 @@ META-INF/
 ## Ignore config files
 authentication-ip.cfg
 authentication-shibboleth.cfg
+authentication-shibboleth-ip.cfg
 
 ## Custom folders
 custom-config/
